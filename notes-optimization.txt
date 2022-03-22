@@ -1,0 +1,8 @@
+Assignment 3 - Optimization
+
+1. Create a separate responsive.css for mobile devices and add a section for other smaller devices.
+2. Fetch data via API and use lazy loading (previous and next 3 - 5 matches).
+3. Find a way around using / storing large image files, for example having them stored somewhere else and fetching them if needed, but not all at once (see the second point).
+4. 
+
+

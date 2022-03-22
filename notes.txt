@@ -1,0 +1,67 @@
+Project structure
+
+- `/src` - Our project source folder.
+  - `/src/assets/backgrounds` - Folder with three background images provided.
+  - `/src/data` - A folder containing our prettified JSON file, which we downloaded from the API.
+  - `/src/components` - A folder containing all components used in our app.
+    - `/src/components/Card.js` – The card component, which displays the data of  single match  
+    - `/src/components/Card.css` – Style for Card component. 
+    - `/src/components/MatchCarousel.js` – Carousel component which fetches  the data and displays the carousel made of Card components.
+    - `/src/components/App.js` - Application root.
+- `notes.txt` - This file.
+- `notes-optimization.txt` - Ideas for Assignment 3.
+
+
+package.json dependencies:
+    - @testing-library/react - a lightweight solution for testing React components
+    - @testing-library/jest-dom -  a set of custom jest matchers that you can use to extend jest. These will make your tests more declarative, clear to read and to maintain.
+    - @testing-library/user-event - tries to simulate the real events that would happen in the browser as the user interacts with it. This library is a work in progress.
+    - react - React is a JavaScript library for creating user interfaces. The react package contains only the functionality necessary to define React components.
+    - react-dom - The react-dom package provides DOM-specific methods that can be used at the top level of your app.
+    - react-responsive-carousel - A powerful, lightweight and fully customizable carousel component for React apps.
+    - react-scripts - This package includes scripts and configuration used by Create React App.
+
+More on dependencies in package.json:
+https://docs.npmjs.com/cli/v7/configuring-npm/package-json
+
+
+Known issues
+
+1. The app is not (yet) optimized for mobile devices.
+2. Loading of a large number of matches is slow.
+3. I did not fully implement the default parameter values: 
+    - sportId: for testing purposes I used sport 0, which is Soccer.
+    - max: I did not implement this because at first I completely missed that the imported component does not contain a property for this and later on I ran out of time.
+4. The project does not contain a MatchCarousel.css file, because I've done all the styling for the match cards in the Card.css file.
+5. Card.js:
+    a) The span tag styling is an example of a quick fix to a somewhat complicated problem, at least at first.
+6. Card.css:
+    a) The .CardDetailsFlag class contains "!important" to override styling from a carousel component. Makes debugging hard.
+7. MatchCarousel.js:
+    a) I downloaded the json file and saved it locally. In production you should use the API calls if possible.
+    b) Regarding a), we could have cut down on most variables.
+    c) The part where I'm manipulating data in the CardDetailsVsInfo div is ugly. It works, but there has to be a better solution to this problem.
+        I have only started with conditional rendering.
+    d) cards.push - the Card component which we are adding into the array contains way too many properties - maybe I could have had refactored this.
+8. The project does not contain any tests nor eslint rules.
+
+
+Suggestions for future code optimization
+1. Create a separate responsive.css for mobile devices and add a section for other smaller devices.
+2. Fetch data via API and use lazy loading (previous and next 3 - 5 matches).
+3. Add the default parameter values and implement the missing parameter values.
+4. Find a better way to conditionally render html code and/or styling.
+5. Create 3 sub-components for each match state and use them appropriately, considering meeting the specificed conditions.
+6. Each of the previously mentioned sub-components would have a "back burned" background image in it, so no extra loading would be necessary.
+7. I would create a translations component and a separate translations.json file containing all of the strings which would have been needed for later use and could not be found in the provided json file.
+8. Implement eslint and incorporate some basic rules 
+    - https://eslint.org/docs/rules/eqeqeq
+    - https://eslint.org/docs/rules/no-var
+    - https://eslint.org/docs/rules/prefer-const
+    - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
+
+
+
+
+
+
