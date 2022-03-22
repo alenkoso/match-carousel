@@ -1,0 +1,122 @@
+.Card { 
+  position: relative;
+  font: 24px/40px "Open Sans", sans-serif;
+  color: #ffffff;
+  height: 100vh;
+  display: flex;
+}
+
+.CardBackground {
+
+  /* Image is centered vertically and horizontally at all times */
+  background-position: center center;
+  
+  /* Image doesn't repeat */
+  background-repeat: no-repeat;
+  
+  /* Makes the image fixed in the viewport so that it doesn't move when 
+      the content height is greater than the image height */
+  /* background-attachment: fixed; */
+  
+  /* This is what makes the background image rescale based on its container's size */
+  background-size: cover;
+  
+  /* Pick a solid background color that will be displayed while the background image is loading */
+  background-color:black;
+
+  /*Background effects*/
+  height: 100%;
+  width: 100%;
+  filter: blur(10px);
+  filter: brightness(50%);
+}
+
+.CardContent, .CardHeader, .CardDetails, .CardFooter {
+  display: flex;
+}
+
+.CardContent {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  height: 100vh;
+  width: 100vw;
+  flex-direction: column;
+}
+
+.CardHeader {
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.CardHeader > div {
+  text-align: center;
+}
+
+.CardDetails {
+  flex: 1;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.CardDetailsVsInfo {
+  text-align: center;
+  line-height: 20%;
+}
+  
+.CardHeader h1 {
+  color: #efecec;
+  font-size: 4vw;
+  font-weight: bold;
+  margin-top: 3rem;
+}
+
+.CardHeader h2 {
+  color: #efecec;
+  font-size: 3vw;
+  font-weight: 200;
+  margin-top: 7vh;
+  text-transform: none;
+}
+
+.CardDetailsVsInfo h3 {
+  font-size: 4vw;
+  font-weight: bolder;
+}
+.CardDetailsVsInfo h4 {
+  font-size: 3vw;
+  font-weight: lighter;
+}
+
+
+.CardFooter {
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+/* First span inside a footer tag */
+.CardFooter > span {
+  border-radius: 20px;
+  background-color: gray;
+  padding: 0 50px;
+  display: inline-block;
+  font-size: 1.5vw;
+}
+
+.CardDetailsFlagContainer {
+  text-align: center;
+}
+
+.CardDetailsFlag {
+  border-color: #0264c0;
+  border-style: double;
+  width: 21vw !important; 
+}
+
+.CardDetailsCountry {
+  text-align: center;
+  font-size: 2vw;
+}
